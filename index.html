@@ -3,48 +3,119 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Renalka Khan</title>
+    <title>Renalka Khan - Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Roboto:wght@300;400&display=swap" rel="stylesheet">
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f9;
+        * {
             margin: 0;
             padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
         }
-        header {
-            background-color: #333;
-            color: #fff;
-            padding: 1rem;
-            text-align: center;
-        }
-        section {
-            margin: 2rem;
-        }
-        h1, h2 {
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: #A7C7E7; /* Pastel Blue */
             color: #333;
         }
-        .card {
-            background-color: #fff;
-            padding: 1.5rem;
-            margin: 1rem 0;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-        .card ul {
-            list-style: none;
-            padding: 0;
-        }
-        .card ul li {
-            margin: 0.5rem 0;
-        }
-        .footer {
+
+        header {
             text-align: center;
-            padding: 1rem;
-            background-color: #333;
+            padding: 50px 20px;
+        }
+
+        h1 {
+            font-size: 3rem;
+            font-weight: 600;
+            letter-spacing: 1px;
+        }
+
+        h2 {
+            font-size: 1.5rem;
+            font-weight: 400;
+            color: #444;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: auto;
+            padding: 20px;
+        }
+
+        .section {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 30px;
+            margin: 20px 0;
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease-out;
+        }
+
+        .section.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .section h3 {
+            font-size: 1.8rem;
+            color: #000;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+
+        .section p {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        .education-block {
+            margin-top: 15px;
+            padding: 15px;
+            background: rgba(255, 255, 255, 1);
+            border-radius: 8px;
+            box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .education-block:hover {
+            transform: scale(1.03);
+        }
+
+        .education-block h4 {
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: #000;
+        }
+
+        .education-block span {
+            display: block;
+            font-size: 1rem;
+            font-weight: 400;
+            color: #555;
+            margin-top: 5px;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            padding: 15px;
+            font-size: 1rem;
+            background-color: #555;
             color: #fff;
-            position: fixed;
-            bottom: 0;
-            width: 100%;
+        }
+
+        /* Scroll animations */
+        .scroll-animation {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease-out;
+        }
+        .scroll-animation.visible {
+            opacity: 1;
+            transform: translateY(0);
         }
     </style>
 </head>
@@ -52,32 +123,64 @@
 
     <header>
         <h1>Renalka Khan</h1>
-        <p>Software Engineer | Data Engineer | Cloud Enthusiast</p>
+        <h2>Software Engineer | Data Engineer | Cloud Enthusiast</h2>
     </header>
 
-    <section>
-        <div class="card">
-            <h2>About Me</h2>
-            <p>I am a Software Engineer with over 2 years of experience in backend development, data engineering, and cloud technologies. I hold a Master’s in Computer Science from the University of Illinois Urbana-Champaign and a Bachelor’s in Computer Science from Dr. APJ Abdul Kalam Technical University. I am passionate about building scalable and efficient systems.</p>
-        </div>
+    <div class="container">
+        
+        <section class="section scroll-animation">
+            <h3>About Me</h3>
+            <p>
+                I am a Software Engineer with over 2 years of experience in backend development, data engineering, and cloud technologies. 
+                I hold a Master’s in Computer Science from the University of Illinois Urbana-Champaign and a Bachelor’s in Computer Science from 
+                Dr. APJ Abdul Kalam Technical University. I am passionate about building scalable and efficient systems.
+            </p>
+        </section>
 
-        <div class="card">
-            <h2>Education</h2>
-            <h3>University of Illinois Urbana-Champaign</h3>
-            <p><strong>Master’s in Computer Science</strong> | GPA: 4.00/4.00</p>
-            <p><em>Aug 2022 - May 2024</em></p>
-            <p><strong>Relevant Courses:</strong> Software Engineering, Database Systems, Machine Learning, Data Mining, Deep Learning</p>
+        <section class="section scroll-animation">
+            <h3>Education</h3>
+            
+            <div class="education-block">
+                <h4>University of Illinois Urbana-Champaign</h4>
+                <span>Master’s in Computer Science (Aug 2022 - May 2024)</span>
+                <span>GPA: 4.00/4.00</span>
+                <span>Relevant Courses: Software Engineering, Database Systems, Machine Learning, Data Mining, Deep Learning</span>
+            </div>
 
-            <h3>Dr. APJ Abdul Kalam Technical University</h3>
-            <p><strong>Bachelor of Technology in Computer Science and Engineering</strong> | GPA: 8.76/10</p>
-            <p><em>Aug 2016 - Sep 2020</em></p>
-            <p><strong>Academic Excellence Awards 2016-17:</strong> Rank 1/128 (CSE department), Rank 1/987 (all engineering branches)</p>
-        </div>
-    </section>
+            <div class="education-block">
+                <h4>Dr. APJ Abdul Kalam Technical University</h4>
+                <span>Bachelor of Technology in Computer Science & Engineering (Aug 2016 - Sep 2020)</span>
+                <span>GPA: 8.76/10</span>
+                <span>Academic Excellence: Rank 1/128 (CSE department), Rank 1/987 (all engineering branches)</span>
+            </div>
+            
+        </section>
 
-    <footer class="footer">
-        <p>© 2025 Renalka Khan. All Rights Reserved.</p>
+    </div>
+
+    <footer>
+        <p>© 2025 Your Name. All Rights Reserved.</p>
     </footer>
+
+    <script>
+        // Scroll animation
+        const scrollElements = document.querySelectorAll('.scroll-animation');
+        const elementInView = (el) => {
+            const rect = el.getBoundingClientRect();
+            return rect.top <= window.innerHeight && rect.bottom >= 0;
+        };
+
+        const displayScrollElement = () => {
+            scrollElements.forEach((el) => {
+                if (elementInView(el)) {
+                    el.classList.add('visible');
+                }
+            });
+        };
+
+        window.addEventListener('scroll', displayScrollElement);
+        window.addEventListener('load', displayScrollElement);
+    </script>
 
 </body>
 </html>
